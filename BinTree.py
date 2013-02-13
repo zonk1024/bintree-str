@@ -64,6 +64,12 @@ class BinTree(object):
                 out += ' ' * right_char_len
             out += '\n'
         out = out[:-1]
+        if not self.parent:
+            newout = ''
+            outlist = out.split('\n')
+            for i in range(len(outlist)):
+                newout += '%3d: %s\n' % (i, outlist[i])
+            out = newout
         return out
 
 seed = random.randint(r_min, r_max)
